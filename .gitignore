@@ -1,0 +1,10 @@
+target/
+.project
+.settings/
+
+/bin/
+src/main/resources/config.properties
+/doc
+
+.DS_Store
+src/main/java/com/jiocloudservices

@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0"
+	targetNamespace="http://vpc.ind-west-1.jiocloudservices.com/doc/2016-03-01/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	jaxb:version="2.1"
+	xmlns:this="http://vpc.ind-west-1.jiocloudservices.com/doc/2016-03-01/">
+
+
+	<xs:element name="CreateVpcResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="vpc">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="vpcId" type="xs:string" />
+							<xs:element name="cidrBlock" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteVpcResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DescribeVpcsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="vpcSet">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="item" nillable="true" minOccurs="0"
+								maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="vpcId" type="xs:string" />
+										<xs:element name="cidrBlock" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CreateSubnetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="subnet">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="availableIpAddressCount" type="xs:int" />
+							<xs:element name="vpcId" type="xs:string" />
+							<xs:element name="subnetId" type="xs:string" />
+							<xs:element name="cidrBlock" type="xs:string" />
+						</xs:sequence>
+
+					</xs:complexType>
+				</xs:element>
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteSubnetResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DescribeSubnetsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="subnetSet">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="item" nillable="true" minOccurs="0"
+								maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="subnetId" type="xs:string" />
+										<xs:element name="availableIpAddressCount" type="xs:int" />
+										<xs:element name="vpcId" type="xs:string" />
+										<xs:element name="cidrBlock" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CreateSecurityGroupResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+				<xs:element name="groupId" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AuthorizeSecurityGroupEgressResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AuthorizeSecurityGroupIngressResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="RevokeSecurityGroupEgressResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="RevokeSecurityGroupIngressResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteSecurityGroupResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ipRanges">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="item" nillable="true" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:appinfo>
+								<jaxb:class name="ipRangesItem" />
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="cidrIp" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="IpPermissions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="item" nillable="true" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:appinfo>
+								<jaxb:class name="IpPermissionsItem" />
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="fromPort" type="xs:int" />
+							<xs:element name="toPort" type="xs:int" />
+							<xs:element name="ipProtocol" type="xs:string" />
+							<xs:element ref="this:ipRanges" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="IpPermissionsEgress">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="item" nillable="true" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:appinfo>
+								<jaxb:class name="IpPermissionEgressItem" />
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="fromPort" type="xs:int" />
+							<xs:element name="toPort" type="xs:int" />
+							<xs:element name="ipProtocol" type="xs:string" />
+							<xs:element ref="this:ipRanges" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DescribeSecurityGroupsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="securityGroupInfo">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="item" nillable="true" minOccurs="0"
+								maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="vpcId" type="xs:string" />
+										<xs:element name="groupId" type="xs:string" />
+										<xs:element ref="this:IpPermissions" />
+										<xs:element name="groupName" type="xs:string" />
+										<xs:element ref="this:IpPermissionsEgress" />
+										<xs:element name="groupDescription" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CreateRouteTableResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="routeTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="routeSet">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="item" nillable="true" minOccurs="0"
+											maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="origin" type="xs:string" />
+													<xs:element name="destinationCidrBlock" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="routeTableId" type="xs:string" />
+				<xs:element name="vpcId" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CreateRouteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteRouteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AssociateRouteTableResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="associationID" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DisassociateRouteTableResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteRouteTableResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="routeSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="item" nillable="true" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:appinfo>
+								<jaxb:class name="routeSetItem" />
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="origin" type="xs:string" />
+							<xs:element name="destinationCidrBlock" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="routeTableSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="item" nillable="true" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:appinfo>
+								<jaxb:class name="routeTableSetItem" />
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="routeTable">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="this:routeSet" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="routeTableId" type="xs:string" />
+							<xs:element name="vpcId" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="associationSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="item" nillable="true" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:appinfo>
+								<jaxb:class name="AssociationSetItem" />
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="routeTableAssociationId" type="xs:string" />
+							<xs:element name="main" type="xs:boolean" />
+							<xs:element name="routeTableId" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DescribeRouteTablesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element ref="this:routeTableSet" />
+				<xs:element ref="this:associationSet" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AllocateAddressResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="publicIp" type="xs:string" />
+				<xs:element name="domain" type="xs:string" />
+				<xs:element name="allocationId" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DescribeAddressesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="addressesSet">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="item" nillable="true" minOccurs="0"
+								maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="domain" type="xs:string" />
+										<xs:element name="instanceId" type="xs:string"
+											minOccurs="0" maxOccurs="1" />
+										<xs:element name="networkInterfaceId" type="xs:string"
+											minOccurs="0" maxOccurs="1" />
+										<xs:element name="associationId" type="xs:string"
+											minOccurs="0" maxOccurs="1" />
+										<xs:element name="networkInterfaceOwnerId" type="xs:string"
+											minOccurs="0" maxOccurs="1" />
+										<xs:element name="v" type="xs:string" minOccurs="0"
+											maxOccurs="1" />
+										<xs:element name="publicIp" type="xs:string" />
+										<xs:element name="allocationId" type="xs:string" />
+										<xs:element name="privateIpAddress" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AssociateAddressResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="associationID" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DisassociateAddressResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ReleaseAddressResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="requestId" type="xs:string" />
+				<xs:element name="return" type="xs:boolean" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
+
